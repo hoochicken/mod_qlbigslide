@@ -17,19 +17,18 @@ use Joomla\CMS\Factory;
 
 // Get the WebAsset Manager
 $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
-$moduleclass_sfx = htmlspecialchars($data->params->get('moduleclass_sfx', ''), ENT_COMPAT, 'UTF-8');
 ?>
 
-<div class="<?php echo 'mod_qlbigslide ' . $moduleclass_sfx; ?>">
+<div class="<?php echo 'mod_qlbigslide ' . $data->getModuleClassSuffix(); ?>">
+    <?php if ($data->showTitle()) : ?>
+        <h3><?php echo Text::_('MOD_QLBIGSLIDE_TITLE'); ?></h3>
+    <?php endif; ?>
+
     <?php if ($data->hasErrors()) : ?>
         <div class="alert alert-error">
             <?php print_r( $data->getErrors()); ?>
         </div>
     <?php else : ?>
-        <?php if ($data->showTitle()) : ?>
-            <h3><?php echo Text::_('MOD_QLBIGSLIDE_TITLE'); ?></h3>
-        <?php endif; ?>
-
         <div class="module-content">
             <?php echo $data->getMessage(); ?>
         </div>

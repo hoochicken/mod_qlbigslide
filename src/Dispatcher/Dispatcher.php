@@ -32,12 +32,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
             $displayModel = new DisplayModel($this->module?->parameter ?? null, $this->module);
             $displayModel->message = $helper->getMessage($data['params'], $this->getApplication());
 
-            return [
-                'module' => $this->module,
-                'data' => $displayModel,
-                'params' => $displayModel->getParams(),
-            ];
-            // return $response->toArray();
+            return $displayModel->toArray();
         } catch (Exception $e) {
             echo $e->getMessage();
         }

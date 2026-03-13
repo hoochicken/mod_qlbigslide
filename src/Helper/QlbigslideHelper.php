@@ -55,18 +55,9 @@ class QlbigslideHelper
             }
             */
             return 'This is the message';
-            return (object)[
-                'message' => $message,
-                'show_title' => $showTitle,
-                'error' => null
-            ];
 
         } catch (Exception $e) {
-            return (object)[
-                'error' => $e->getMessage(),
-                'message' => '',
-                'show_title' => false
-            ];
+            return $e->getMessage();
         }
     }
 }

@@ -7,11 +7,13 @@ use stdClass;
 
 interface DisplayInterface
 {
+
+    /**
+     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorModel[] }
+     */
     public function toArray(): array;
 
     public function showTitle(): bool;
-
-    public function hasErrors(): bool;
 
     public function getParams(): ?Registry;
 
@@ -24,6 +26,8 @@ interface DisplayInterface
     public function getMessage(): ?string;
 
     public function setMessage(?string $message): void;
+
+    public function hasErrors(): bool;
 
     public function getErrors(): array;
 

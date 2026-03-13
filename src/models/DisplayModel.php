@@ -5,7 +5,7 @@ namespace Hoochicken\Module\Qlbigslide\Site\models;
 use Joomla\Registry\Registry;
 use stdClass;
 
-class DisplayModel extends DisplayInterface
+class DisplayModel implements DisplayInterface, DisplayQlbigslideInterface
 {
     public ?Registry $params = null;
     public ?stdClass $module = null;
@@ -19,9 +19,13 @@ class DisplayModel extends DisplayInterface
         $this->module = $module;
     }
 
-    protected function toArray(): array
+    /**
+     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorModel[] }
+     */
+    public function toArray(): array
     {
         return [
+            'data' => $this,
             'message' => $this->message,
             'params' => $this->params,
             'module' => $this->module,
@@ -32,6 +36,15 @@ class DisplayModel extends DisplayInterface
     public function showTitle(): bool
     {
         return (bool)$this->params->get('show_title', 1);
+    }
+
+    public function getModuleClassSuffix(bool $specialchars = true): string
+    {
+        $moduleclassSuffix = (string)$this->params->get('moduleclass_sfx', '');
+        if (!$specialchars) {
+            return $moduleclassSuffix;
+        }
+        return htmlspecialchars($moduleclassSuffix, ENT_COMPAT, 'UTF-8');
     }
 
     public function hasErrors(): bool
