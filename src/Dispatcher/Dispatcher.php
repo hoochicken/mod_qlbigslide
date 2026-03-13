@@ -24,6 +24,9 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
     protected function getLayoutData()
     {
         try {
+
+
+
             $data = parent::getLayoutData();
 
             /** @var QlbigslideHelper $helper */

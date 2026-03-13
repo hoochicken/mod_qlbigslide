@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_hello",
+  "version": "1.0.0",
+  "description": "Qlbigslide",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "mod_qlbigslide.script",
+      "type": "script",
+      "uri": "mod_qlbigslide/script.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "name": "mod_qlbigslide.style",
+      "type": "style",
+      "uri": "mod_qlbigslide/style.css",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "1.0.0"
+    }
+  ]
+}

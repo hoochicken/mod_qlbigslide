@@ -19,8 +19,10 @@
     </files>
 
     <media destination="mod_qlbigslide" folder="media">
-        <filename>css/mod_qlbigslide.css</filename>
-        <filename>js/mod_qlbigslide.js</filename>
+        <filename>joomla.asset.json</filename>
+        <folder>js</folder>
+        <!--filename>css/mod_qlbigslide.css</filename-->
+        <filename>js/script.js</filename>
     </media>
     <languages>
         <language tag="en-GB">language/en-GB/mod_qlbigslide.ini</language>
