@@ -5,32 +5,136 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-.mod_qlbigslide {
-    /* Add your custom CSS styles here */
-    display: block;
+Xhtml, Xbody {
     margin: 0;
-    padding: 1rem;
+    padding: 0;
+    height: 100%;
 }
 
-/* Example responsive styles */
-@media (max-width: 768px) {
-    .mod_qlbigslide {
-        padding: 0.5rem;
-    }
+/* Fullscreen slider */
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    background: #000;
 }
 
-/* Example custom classes */
-.mod_qlbigslide__title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+.slider__viewport {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.mod_qlbigslide__content {
-    line-height: 1.5;
+.slider__track {
+    display: flex;
+    height: 100%;
+    transition: transform 400ms ease;
+    will-change: transform;
 }
 
-.mod_qlbigslide__footer {
-    margin-top: 1rem;
-    font-size: 0.9rem;
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Caption base */
+.slide__caption {
+    position: absolute;
+    bottom: 8%;
+    max-width: min(520px, 86vw);
+    color: #fff;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+}
+
+/* Caption alignment classes (set by JS via config) */
+.slider--box-left .slide__caption {
+    left: 6%;
+    right: auto;
+    text-align: left;
+}
+
+.slider--box-right .slide__caption {
+    right: 6%;
+    left: auto;
+    text-align: left;
+}
+
+/* Prev/Next buttons */
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider__btn--prev { left: 20px; }
+.slider__btn--next { right: 20px; }
+
+/* Dots */
+.slider__dots {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slider__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.slider__dot[aria-current="true"] {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+/* Start/Pause controls */
+.slider__controls {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slider__controlBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Utility: hidden */
+.is-hidden {
+    display: none !important;
 }

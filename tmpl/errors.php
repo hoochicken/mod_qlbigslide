@@ -8,18 +8,17 @@
 
 defined('_JEXEC') or die;
 
-use Hoochicken\Module\Qlbigslide\Site\models\DisplayModel;
+use Hoochicken\Module\Qlbigslide\Site\models\DisplayCustom;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 
-/** @var DisplayModel $data */
+/** @var DisplayCustom $data */
 
 // Get the WebAsset Manager
-$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 ?>
 
-<div class="<?php echo 'mod_qlbigslide ' . $data->getModuleClassSuffix(); ?>">
+<<?= $data->getModuleTag() ?>> class="<?php echo 'mod_qlbigslide ' . $data->getModuleClassSuffix(); ?>">
     <?php if ($data->showTitle()) : ?>
         <h3><?php echo Text::_('MOD_QLBIGSLIDE_TITLE'); ?></h3>
     <?php endif; ?>
@@ -27,4 +26,4 @@ $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
     <div class="alert alert-error">
         <?php print_r($data->getErrors()); ?>
     </div>
-</div>
+</<?= $data->getModuleTag() ?>>

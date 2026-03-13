@@ -5,7 +5,11 @@ namespace Hoochicken\Module\Qlbigslide\Site\models;
 use Joomla\Registry\Registry;
 use stdClass;
 
-class DisplayModel implements DisplayInterface, DisplayQlbigslideInterface
+/**
+ * this class contains all basic functionality that a module needs
+ * specifications for the custom module will be put into DisplayCustom
+ */
+class DisplayBasic implements DisplayBasicInterface
 {
     public ?Registry $params = null;
     public ?stdClass $module = null;
@@ -35,16 +39,26 @@ class DisplayModel implements DisplayInterface, DisplayQlbigslideInterface
 
     public function showTitle(): bool
     {
-        return (bool)$this->params->get('show_title', 1);
+        return (bool)$this->module->showtitle ?? false;
     }
 
-    public function getModuleClassSuffix(bool $specialchars = true): string
+    public function getHeaderTag(): string
     {
-        $moduleclassSuffix = (string)$this->params->get('moduleclass_sfx', '');
-        if (!$specialchars) {
-            return $moduleclassSuffix;
+        return (bool)$this->params->get('header_tag', 'h3');
+    }
+
+    public function getModuleTag(): string
+    {
+        return (string)$this->params->get('module_tag', 'div');
+    }
+
+    public function getModuleClassSuffix(bool $specialChars = true): string
+    {
+        $moduleClassSuffix = (string)$this->params->get('moduleclass_sfx', '');
+        if (!$specialChars) {
+            return $moduleClassSuffix;
         }
-        return htmlspecialchars($moduleclassSuffix, ENT_COMPAT, 'UTF-8');
+        return htmlspecialchars($moduleClassSuffix, ENT_COMPAT, 'UTF-8');
     }
 
     public function hasErrors(): bool

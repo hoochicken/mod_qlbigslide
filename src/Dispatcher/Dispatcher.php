@@ -11,7 +11,7 @@ namespace Hoochicken\Module\Qlbigslide\Site\Dispatcher;
 defined('_JEXEC') or die;
 
 use Exception;
-use Hoochicken\Module\Qlbigslide\Site\models\DisplayModel;
+use Hoochicken\Module\Qlbigslide\Site\models\DisplayCustom;
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 use Joomla\CMS\Helper\HelperFactoryAwareInterface;
 use Joomla\CMS\Helper\HelperFactoryAwareTrait;
@@ -32,7 +32,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
             /** @var QlbigslideHelper $helper */
             $helper = $this->getHelperFactory()->getHelper('QlbigslideHelper');
 
-            $displayModel = new DisplayModel($this->module?->parameter ?? null, $this->module);
+            $displayModel = new DisplayCustom($this->module?->parameter ?? null, $this->module);
             $displayModel->message = $helper->getMessage($data['params'], $this->getApplication());
 
             return $displayModel->toArray();
