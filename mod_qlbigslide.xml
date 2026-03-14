@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
     <name>MOD_QLBIGSLIDE_TITLE</name>
-    <creationDate>2026-02-28</creationDate>
+    <creationDate>2026-03-14</creationDate>
     <author>Mareike Riegel</author>
     <authorEmail>info@ql.de</authorEmail>
     <authorUrl>https://ql.de</authorUrl>
