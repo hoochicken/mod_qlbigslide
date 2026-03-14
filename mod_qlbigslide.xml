@@ -22,6 +22,8 @@
         <folder>src</folder>
         <folder>tmpl</folder>
         <file>mod_qlbigslide.xml</file>
+        <file>LICENSE.txt</file>
+        <file>README.md</file>
     </files>
     <media destination="mod_qlbigslide" folder="media">
         <filename>joomla.asset.json</filename>
