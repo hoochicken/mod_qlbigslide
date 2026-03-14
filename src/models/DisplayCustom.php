@@ -19,7 +19,7 @@ class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, Displ
 
     public function hasSlides(): bool
     {
-        return !is_null($this->slideCollection) && !$this->slideCollection->isEmpty();
+        return !is_null($this->slideCollection) && $this->slideCollection->hasSlides();
     }
 
     public function getSlides(): ?SlideCollection

@@ -25,7 +25,8 @@ $wa->useStyle('mod_qlbigslide.style');
 if ($data->hasErrors()) {
     require __DIR__ . '/error.php';
     return;
-} ?>
+}
+?>
 
 <<?= $data->getModuleTag() ?> class="<?php echo 'mod_qlbigslide ' . $data->getModuleClassSuffix(); ?>">
 <?php if ($data->showTitle()) : ?>
@@ -35,29 +36,27 @@ if ($data->hasErrors()) {
     <div class="slider" id="heroSlider" aria-roledescription="carousel">
         <div class="slider__viewport">
             <div class="slider__track">
-                <section class="slide" aria-label="Slide 1 of 3">
-                    <img src="https://picsum.photos/id/1018/1200/600" alt="Mountain landscape">
-                    <div class="slide__caption">
-                        <h2>Slide title 1</h2>
-                        <p>Short description goes here.</p>
-                    </div>
-                </section>
-
-                <section class="slide" aria-label="Slide 2 of 3">
-                    <img src="https://picsum.photos/id/1025/1200/600" alt="Dog portrait">
-                    <div class="slide__caption">
-                        <h2>Slide title 2</h2>
-                        <p>Another description text.</p>
-                    </div>
-                </section>
-
-                <section class="slide" aria-label="Slide 3 of 3">
-                    <img src="https://picsum.photos/id/1039/1200/600" alt="Forest view">
-                    <div class="slide__caption">
-                        <h2>Slide title 3</h2>
-                        <p>More info on this slide.</p>
-                    </div>
-                </section>
+                <?php if ($data->hasSlides()): ?>
+                    <?php
+                    $slides = $data->getSlides()->get();
+                    $totalSlides = count($slides);
+                    $index = 1;
+                    ?>
+                    <?php foreach ($slides as $slide): ?>
+                        <?php if (!$slide->isDisplay() || !$slide->existsImage()) {
+                            continue;
+                        } ?>
+                        <section class="slide"
+                                 aria-label="<?= Text::sprintf('MOD_QLBIGSLIDE_SLIDE_ARIA_LABEL', $index, $totalSlides); ?>">
+                            <img src="<?= $slide->getImage() ?>" alt="">
+                            <div class="slide__caption">
+                                <?php if ($slide->existsTitle()) : ?><h2><?= $slide->getTitle(); ?></h2><?php endif; ?>
+                                <?php if ($slide->existsText()) : ?><?= $slide->getText(); ?><?php endif; ?>
+                            </div>
+                        </section>
+                        <?php $index++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
 

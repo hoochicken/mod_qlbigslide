@@ -28,8 +28,8 @@ class SlideCollection
         return $this->items;
     }
 
-    public function isEmpty(): bool
+    public function hasSlides(): bool
     {
-        return $this->items === [];
+        return count($this->items) > 0;
     }
 }

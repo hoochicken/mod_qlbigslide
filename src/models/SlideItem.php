@@ -2,10 +2,13 @@
 
 namespace Hoochicken\Module\Qlbigslide\Site\models;
 
+use Hoochicken\Module\Qlbigslide\Site\Helper\StringHelper;
+
 class SlideItem
 {
     private bool $display;
     private string $image;
+    private string $imageRaw;
     private string $title;
     private string $text;
 
@@ -19,24 +22,36 @@ class SlideItem
         $this->display = $display;
     }
 
-    public function getImage(): string
+    public function getImage(bool $specialChars = true): string
     {
-        return $this->image;
+        return StringHelper::transFormSpecialChars($this->image, $specialChars);
+    }
+
+    public function existsImage(): bool
+    {
+        $path = sprintf('%s/%s', JPATH_ROOT, $this->image);
+        return file_exists($path);
     }
 
     public function setImage(string $image): void
     {
-        $this->image = $image;
+        $this->imageRaw = $image;
+        $this->image = StringHelper::cleanupFileName($image);
     }
 
-    public function getTitle(): string
+    public function getTitle(bool $specialChars = true): string
     {
-        return $this->title;
+        return StringHelper::transFormSpecialChars($this->title, $specialChars);
     }
 
     public function setTitle(string $title): void
     {
         $this->title = $title;
+    }
+
+    public function existsTitle(): bool
+    {
+        return trim($this->title ?? '') !== '';
     }
 
     public function getText(): string
@@ -47,6 +62,16 @@ class SlideItem
     public function setText(string $text): void
     {
         $this->text = $text;
+    }
+
+    public function existsText(): bool
+    {
+        return trim($this->text ?? '') !== '';
+    }
+
+    public function extistsTet(): bool
+    {
+        return $this->existsText();
     }
 }
 

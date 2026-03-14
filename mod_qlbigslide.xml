@@ -47,9 +47,9 @@
 					default="0"
                     filter="integer"
 					>
+                    <option value="0">JNO</option>
                     <option value="1">JYES</option>
-					<option value="0">JNO</option>					
-				</field>
+                </field>
                 <field
                         name="slide1_image"
                         type="media"
@@ -59,10 +59,10 @@
                         filter="\.(jpg|jpeg|png|gif|webp)$"
                 />
                 <field
-                        name="slide1_headline"
+                        name="slide1_title"
                         type="text"
-                        label="MOD_QLBIGSLIDE_HEADLINE_LABEL"
-                        description="MOD_QLBIGSLIDE_HEADLINE_DESC"
+                        label="MOD_QLBIGSLIDE_TITLE_LABEL"
+                        description="MOD_QLBIGSLIDE_TITLE_DESC"
                 />
                 <field
                         name="slide1_text"

@@ -19,6 +19,14 @@ use Joomla\Database\DatabaseInterface;
 
 class QlbigslideHelper
 {
+    public static function transFormSpecialChars(string $string, bool $specialChars = true): string
+{
+    if ($specialChars) {
+        return $string;
+    }
+    return htmlspecialchars($string);
+}
+
     public function getMessage(Registry $params, $app): string
     {
         try {

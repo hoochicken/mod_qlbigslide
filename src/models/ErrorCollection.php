@@ -28,9 +28,9 @@ class ErrorCollection
         return $this->items;
     }
 
-    public function isEmpty(): bool
+    public function hasErrors(): bool
     {
-        return $this->items === [];
+        return 0 < count($this->items);
     }
 }
 
