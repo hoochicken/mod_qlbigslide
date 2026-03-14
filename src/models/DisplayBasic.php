@@ -14,7 +14,7 @@ class DisplayBasic implements DisplayBasicInterface
     public ?Registry $params = null;
     public ?stdClass $module = null;
     public ?string $message = null;
-    /** @var ErrorModel[] */
+    /** @var ErrorItem[] */
     public array $errors = [];
 
     public function __construct(Registry $params, stdClass $module)
@@ -24,7 +24,7 @@ class DisplayBasic implements DisplayBasicInterface
     }
 
     /**
-     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorModel[] }
+     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorItem[] }
      */
     public function toArray(): array
     {

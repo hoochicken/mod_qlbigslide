@@ -10,7 +10,7 @@ class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, Displ
     public ?Registry $params = null;
     public ?stdClass $module = null;
     public ?string $message = null;
-    /** @var ErrorModel[] */
+    /** @var ErrorItem[] */
     public array $errors = [];
 
     public function __construct(Registry $params, stdClass $module)

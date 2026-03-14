@@ -2,7 +2,7 @@
 
 namespace Hoochicken\Module\Qlbigslide\Site\models;
 
-class ErrorModel
+class ErrorItem
 {
     private string $type;
     private string $message;

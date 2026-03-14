@@ -8,7 +8,7 @@ use stdClass;
 interface DisplayBasicInterface
 {
     /**
-     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorModel[] }
+     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorItem[] }
      */
     public function toArray(): array;
 
