@@ -5,7 +5,7 @@ namespace Hoochicken\Module\Qlbigslide\Site\models;
 use Joomla\Registry\Registry;
 use stdClass;
 
-class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, DisplayQlbigslideInterface
+class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, DisplayCustomInterface
 {
     public ?Registry $params = null;
     public ?stdClass $module = null;

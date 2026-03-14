@@ -30,6 +30,53 @@
     </languages>
     <config>
         <fields name="params">
+            <fieldset name="slides" addfieldprefix="Hoochicken\Module\Qlbigslide\Site\Field">
+                <field
+                        name="slide_1_spacer"
+                        type="spacer"
+                        label="MOD_QLBIGSLIDE_SPACER_1_LABEL"
+                        description="MOD_QLBIGSLIDE_SPACER_1_DESC"
+                />
+                <field
+					name="slide1_display"
+					type="radio"
+                    class="btn-group btn-group-yesno"
+                    layout="joomla.form.field.radio.switcher"
+					label="MOD_QLBIGSLIDE_DISPLAY_LABEL"
+					description="MOD_QLBIGSLIDE_DISPLAY_DESC"
+					default="0"
+                    filter="integer"
+					>
+                    <option value="1">JYES</option>
+					<option value="0">JNO</option>					
+				</field>
+                <field
+                        name="slide1_image"
+                        type="media"
+                        label="MOD_QLBIGSLIDE_IMAGE_LABEL"
+                        description="MOD_QLBIGSLIDE_IMAGE_DESC"
+                        directory="images"
+                        filter="\.(jpg|jpeg|png|gif|webp)$"
+                />
+                <field
+                        name="slide1_headline"
+                        type="text"
+                        label="MOD_QLBIGSLIDE_HEADLINE_LABEL"
+                        description="MOD_QLBIGSLIDE_HEADLINE_DESC"
+                />
+                <field
+                        name="slide1_text"
+                        type="editor"
+                        label="MOD_QLBIGSLIDE_TEXT_LABEL"
+                        description="MOD_QLBIGSLIDE_TXT_DESC"
+                        height="100"
+                        width="100"
+                        toolbar_location="top"
+                        toolbar_position="top"
+                        toolbar_align="left"
+                        filter="safehtml"
+                />
+            </fieldset>
             <fieldset name="basic" addfieldprefix="Hoochicken\Module\Qlbigslide\Site\Field">
                 <field
                         name="moduleclass_sfx"
