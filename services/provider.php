@@ -18,8 +18,9 @@ return new class() implements ServiceProviderInterface
 {
     public function register(Container $container)
     {
-        $container->registerServiceProvider(new ModuleDispatcherFactory('\Hoochicken\Module\Qlbigslide'));
-        $container->registerServiceProvider(new HelperFactory('\Hoochicken\Module\Qlbigslide\Site\Helper'));
+        require_once __DIR__ . '/../src/Dispatcher/Dispatcher.php';
+        $container->registerServiceProvider(new ModuleDispatcherFactory('\\Hoochicken\\Module\\Qlbigslide'));
+        $container->registerServiceProvider(new HelperFactory('\\Hoochicken\\Module\\Qlbigslide\\Site\\Helper'));
         $container->registerServiceProvider(new Module());
     }
 };

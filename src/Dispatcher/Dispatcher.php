@@ -11,13 +11,13 @@ namespace Hoochicken\Module\Qlbigslide\Site\Dispatcher;
 defined('_JEXEC') or die;
 
 use Exception;
+use Hoochicken\Module\Qlbigslide\Site\Helper\QlbigslideHelper;
 use Hoochicken\Module\Qlbigslide\Site\models\DisplayCustom;
 use Hoochicken\Module\Qlbigslide\Site\models\SlideCollection;
 use Hoochicken\Module\Qlbigslide\Site\models\SlideItem;
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 use Joomla\CMS\Helper\HelperFactoryAwareInterface;
 use Joomla\CMS\Helper\HelperFactoryAwareTrait;
-use Hoochicken\Module\Qlbigslide\Site\Helper\QlbigslideHelper;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\Registry\Registry;
 
