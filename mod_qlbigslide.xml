@@ -15,6 +15,7 @@
     <namespace path="src">Hoochicken\Module\Qlbigslide</namespace>
     <files>
         <folder module="mod_qlbigslide">services</folder>
+        <folder>_jupdate</folder>
         <folder>language</folder>
         <folder>media</folder>
         <folder>services</folder>
