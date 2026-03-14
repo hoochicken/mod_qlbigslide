@@ -22,6 +22,13 @@ $wa->getRegistry()->addExtensionRegistryFile('mod_qlbigslide');
 $wa->useScript('mod_qlbigslide.script');
 $wa->useStyle('mod_qlbigslide.style');
 
+$document->addScriptOptions('mod_qlbigslide.config', [
+    'autoplayMs' => (int)($data->getParams()?->get('autoplayMs', 3000) ?? 3000),
+    'boxAlign' => (string)($data->getParams()?->get('boxAlign', 'left') ?? 'left'),
+    'displayNavigationPrevNext' => (bool)($data->getParams()?->get('displayNavigationPrevNext', 1) ?? 1),
+    'displayNavigationDots' => (bool)($data->getParams()?->get('displayNavigationDots', 1) ?? 1),
+]);
+
 if ($data->hasErrors()) {
     require __DIR__ . '/error.php';
     return;

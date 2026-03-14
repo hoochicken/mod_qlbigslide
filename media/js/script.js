@@ -2,13 +2,18 @@ if (!window.Joomla) {
   throw new Error('Joomla API was not properly initialised');
 }
 
-// ✅ External config (example). You can set this from anywhere BEFORE slider init runs.
-// window.SLIDER_CONFIG = {
-//   autoplayMs: 3000,
-//   boxAlign: "left", // "left" | "right"
-//   displayNavigationPrevNext: true,
-//   displayNavigationDots: true
-// };
+// Config can be injected from PHP via Document::addScriptOptions.
+// In this module we read `mod_qlbigslide.config` and expose it as `window.SLIDER_CONFIG`
+// in the shape expected by the slider.
+
+const joomlaConfig = Joomla.getOptions('mod_qlbigslide.config') || {};
+
+window.SLIDER_CONFIG = {
+  autoplayMs: Number(joomlaConfig.autoplayMs ?? 3000),
+  boxAlign: (joomlaConfig.boxAlign === "right" ? "right" : "left"), // "left" | "right"
+  displayNavigationPrevNext: Boolean(joomlaConfig.displayNavigationPrevNext ?? true),
+  displayNavigationDots: Boolean(joomlaConfig.displayNavigationDots ?? true)
+};
 
 (function () {
   const DEFAULT_CONFIG = {
@@ -161,20 +166,3 @@ if (!window.Joomla) {
   window.heroSliderApi = createSlider(root, config);
 })();
 
-
-
-
-
-/*;
-
-alert('asdasd')
-
-const arr = Joomla.getOptions('mod_qlbigslide.vars');
-console.log(arr);   // outputs Object { suffix: "!" }
-alert(arr);   // outputs Object { suffix: "!" }
-
-const { suffix } = Joomla.getOptions('mod_hello.vars');
-document.querySelectorAll('.mod_hello').forEach(element => {
-  element.innerText += suffix;
-});
-*/
