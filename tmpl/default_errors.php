@@ -13,17 +13,17 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 
-/** @var DisplayCustom $data */
+/** @var DisplayCustom $displayData */
 
 // Get the WebAsset Manager
 ?>
 
-<<?= $data->getModuleTag() ?>> class="<?php echo 'mod_qlbigslide ' . $data->getModuleClassSuffix(); ?>">
-    <?php if ($data->showTitle()) : ?>
+<<?= $displayData->getModuleTag() ?>> class="<?php echo 'mod_qlbigslide ' . $displayData->getModuleClassSuffix(); ?>">
+    <?php if ($displayData->showTitle()) : ?>
         <h3><?php echo Text::_('MOD_QLBIGSLIDE_TITLE'); ?></h3>
     <?php endif; ?>
 
     <div class="alert alert-error">
-        <?php print_r($data->getErrors()); ?>
+        <?php print_r($displayData->getErrors()); ?>
     </div>
-</<?= $data->getModuleTag() ?>>
+</<?= $displayData->getModuleTag() ?>>

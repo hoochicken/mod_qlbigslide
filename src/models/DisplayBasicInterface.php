@@ -26,6 +26,8 @@ interface DisplayBasicInterface
 
     public function getModuleClassSuffix(bool $specialChars = true): string;
 
+    public function getLayout(): string;
+
     public function getParams(): ?Registry;
 
     public function setParams(?Registry $params): void;

@@ -16,7 +16,7 @@ use Joomla\DI\ServiceProviderInterface;
 
 return new class() implements ServiceProviderInterface
 {
-    public function register(Container $container): void
+    public function register(Container $container)
     {
         $container->registerServiceProvider(new ModuleDispatcherFactory('\Hoochicken\Module\Qlbigslide'));
         $container->registerServiceProvider(new HelperFactory('\Hoochicken\Module\Qlbigslide\Site\Helper'));

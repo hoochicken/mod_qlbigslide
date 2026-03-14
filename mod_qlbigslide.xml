@@ -168,6 +168,8 @@
 
             <fieldset name="basic" addfieldprefix="Hoochicken\Module\Qlbigslide\Site\Field">
                 <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" class="form-select" validate="moduleLayout"
+                       default="default"/>
             </fieldset>
         </fields>
     </config>

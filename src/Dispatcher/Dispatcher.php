@@ -18,6 +18,7 @@ use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 use Joomla\CMS\Helper\HelperFactoryAwareInterface;
 use Joomla\CMS\Helper\HelperFactoryAwareTrait;
 use Hoochicken\Module\Qlbigslide\Site\Helper\QlbigslideHelper;
+use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\Registry\Registry;
 
 class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareInterface
@@ -28,6 +29,30 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
 
     private ?Registry $params = null;
 
+    public function dispatch()
+    {
+        $this->loadLanguage();
+
+        $displayData = $this->getLayoutData();
+        if ($this->isProperDisplayCustom($displayData)) {
+            return;
+        }
+
+        /** @var DisplayCustom $displayData */
+        $displayData = $displayData['data'] ?? null;
+        require ModuleHelper::getLayoutPath('mod_qlbigslide', $displayData->getLayout());
+    }
+
+    protected function isProperDisplayCustom(array $displayData): bool
+    {
+        return empty($displayData) || !isset($displayData['data']) || DisplayCustom::class !== get_class($displayData['data']);
+    }
+
+    /**
+     * this method has a feeble array as return value due to given framework
+     * anyway, works :-)
+     * @return array|false|string
+     */
     protected function getLayoutData()
     {
         try {

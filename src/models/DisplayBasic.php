@@ -66,6 +66,11 @@ class DisplayBasic implements DisplayBasicInterface
         return htmlspecialchars($moduleClassSuffix, ENT_COMPAT, 'UTF-8');
     }
 
+    public function getLayout(): string
+    {
+        return (string)$this->params->get('layout', '');
+    }
+
     public function existsErrors(): bool
     {
         return !is_null($this->errors) && !$this->errors->hasErrors();

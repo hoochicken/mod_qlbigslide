@@ -13,7 +13,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 
-/** @var DisplayCustom $data */
+/** @var ?DisplayCustom $displayData */
 
 // Get the WebAsset Manager
 $document = Factory::getApplication()->getDocument();
@@ -23,33 +23,35 @@ $wa->useScript('mod_qlbigslide.script');
 $wa->useStyle('mod_qlbigslide.style');
 
 $document->addScriptOptions('mod_qlbigslide.config', [
-    'autoplayMs' => $data->getAutoplayMs(),
-    'boxAlign' => $data->getBoxAlign(),
-    'displayNavigationPrevNext' => $data->displayNavigationPrevNext(),
-    'displayNavigationDots' => $data->displayNavigationDots(),
+    'autoplayMs' => $displayData->getAutoplayMs(),
+    'boxAlign' => $displayData->getBoxAlign(),
+    'displayNavigationPrevNext' => $displayData->displayNavigationPrevNext(),
+    'displayNavigationDots' => $displayData->displayNavigationDots(),
 ]);
 
-if ($data->existsErrors()) {
-    require __DIR__ . '/errors.php';
+$layout = $displayData->getLayout();
+
+if ($displayData->existsErrors()) {
+    require sprintf('%s/%s_%s', __DIR__, $layout, 'errors.php');
     return;
 }
 
-if ($data->existsMessage()) {
-    require __DIR__ . '/message.php';
+if ($displayData->existsMessage()) {
+    require sprintf('%s/%s_%s', __DIR__, $layout, 'message.php');
 }
 ?>
 
-<<?= $data->getModuleTag() ?> class="<?php echo 'mod_qlbigslide ' . $data->getModuleClassSuffix(); ?>">
-<?php if ($data->showTitle()) : ?>
-    <<?= $data->getHeaderTag() ?>><?php echo Text::_('MOD_QLBIGSLIDE_TITLE'); ?></<?= $data->getHeaderTag() ?>>
+<<?= $displayData->getModuleTag() ?> class="<?php echo 'mod_qlbigslide ' . $displayData->getModuleClassSuffix(); ?>">
+<?php if ($displayData->showTitle()) : ?>
+    <<?= $displayData->getHeaderTag() ?>><?php echo Text::_('MOD_QLBIGSLIDE_TITLE'); ?></<?= $displayData->getHeaderTag() ?>>
 <?php endif; ?>
 <div class="module-content">
     <div class="slider" id="heroSlider" aria-roledescription="carousel">
         <div class="slider__viewport">
             <div class="slider__track">
-                <?php if ($data->hasSlides()): ?>
+                <?php if ($displayData->hasSlides()): ?>
                     <?php
-                    $slides = $data->getSlides()->get();
+                    $slides = $displayData->getSlides()->get();
                     $totalSlides = count($slides);
                     $index = 1;
                     ?>
@@ -86,6 +88,6 @@ if ($data->existsMessage()) {
     </div>
 
 
-    <?php echo $data->getMessage(); ?>
+    <?php echo $displayData->getMessage(); ?>
 </div>
-</<?= $data->getModuleTag() ?>>
+</<?= $displayData->getModuleTag() ?>>
