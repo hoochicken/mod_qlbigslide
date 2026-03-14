@@ -1,6 +1,6 @@
 ## Qlbigslide Joomla Module
 
-Qlbigslide is a Joomla 5 site module that displays a configurable hero slider with up to **10 slides**. Each slide can have its own image, title, and rich-text content, and can be individually enabled or disabled. The module also provides flexible slider behavior settings such as autoplay, caption alignment, and navigation visibility.
+Qlbigslide is a Joomla 5/6 site module that displays a configurable hero slider with up to **10 slides**. Each slide can have its own image, title, and rich-text content, and can be individually enabled or disabled. The module also provides flexible slider behavior settings such as autoplay, caption alignment, and navigation visibility.
 
 ### Features
 
