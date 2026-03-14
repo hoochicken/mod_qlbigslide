@@ -33,4 +33,3 @@ class SlideCollection
         return $this->items === [];
     }
 }
-

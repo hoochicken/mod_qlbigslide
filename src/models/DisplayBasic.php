@@ -63,7 +63,7 @@ class DisplayBasic implements DisplayBasicInterface
 
     public function hasErrors(): bool
     {
-        return !$this->errors->isEmpty();
+        return !is_null($this->errors) && !$this->errors->isEmpty();
     }
 
     public function getParams(): ?Registry

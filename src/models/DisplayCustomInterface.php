@@ -11,5 +11,5 @@ interface DisplayCustomInterface
 
     public function getSlides(): ?SlideCollection;
 
-    public function setSlides(?SlideCollection $errors): void;
+    public function setSlides(?SlideCollection $slideCollection): void;
 }
