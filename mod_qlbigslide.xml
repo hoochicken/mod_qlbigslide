@@ -31,59 +31,118 @@
     <config>
         <fields name="params">
             <fieldset name="slides" addfieldprefix="Hoochicken\Module\Qlbigslide\Site\Field">
-                <field
-                        name="slide_1_spacer"
-                        type="spacer"
-                        label="MOD_QLBIGSLIDE_SPACER_1_LABEL"
-                        description="MOD_QLBIGSLIDE_SPACER_1_DESC"
-                />
-                <field
-					name="slide1_display"
-					type="radio"
-                    class="btn-group btn-group-yesno"
-                    layout="joomla.form.field.radio.switcher"
-					label="MOD_QLBIGSLIDE_DISPLAY_LABEL"
-					description="MOD_QLBIGSLIDE_DISPLAY_DESC"
-					default="0"
-                    filter="integer"
-					>
+                <field name="slide_1_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_1_LABEL" description="MOD_QLBIGSLIDE_SPACER_1_DESC" />
+                <field name="slide1_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+					label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
                 </field>
-                <field
-                        name="slide1_image"
-                        type="media"
-                        label="MOD_QLBIGSLIDE_IMAGE_LABEL"
-                        description="MOD_QLBIGSLIDE_IMAGE_DESC"
-                        directory="images"
-                        filter="\.(jpg|jpeg|png|gif|webp)$"
-                />
-                <field
-                        name="slide1_title"
-                        type="text"
-                        label="MOD_QLBIGSLIDE_TITLE_LABEL"
-                        description="MOD_QLBIGSLIDE_TITLE_DESC"
-                />
-                <field
-                        name="slide1_text"
-                        type="editor"
-                        label="MOD_QLBIGSLIDE_TEXT_LABEL"
-                        description="MOD_QLBIGSLIDE_TXT_DESC"
-                        height="100"
-                        width="100"
-                        toolbar_location="top"
-                        toolbar_position="top"
-                        toolbar_align="left"
-                        filter="safehtml"
-                />
+                <field name="slide1_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide1_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide1_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_2_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_2_LABEL" description="MOD_QLBIGSLIDE_SPACER_2_DESC" />
+                <field name="slide2_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide2_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide2_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide2_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_3_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_3_LABEL" description="MOD_QLBIGSLIDE_SPACER_3_DESC" />
+                <field name="slide3_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide3_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide3_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide3_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_4_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_4_LABEL" description="MOD_QLBIGSLIDE_SPACER_4_DESC" />
+                <field name="slide4_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide4_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide4_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide4_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_5_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_5_LABEL" description="MOD_QLBIGSLIDE_SPACER_5_DESC" />
+                <field name="slide5_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide5_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide5_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide5_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_6_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_6_LABEL" description="MOD_QLBIGSLIDE_SPACER_6_DESC" />
+                <field name="slide6_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide6_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide6_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide6_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_7_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_7_LABEL" description="MOD_QLBIGSLIDE_SPACER_7_DESC" />
+                <field name="slide7_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide7_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide7_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide7_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_8_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_8_LABEL" description="MOD_QLBIGSLIDE_SPACER_8_DESC" />
+                <field name="slide8_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide8_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide8_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide8_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_9_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_9_LABEL" description="MOD_QLBIGSLIDE_SPACER_9_DESC" />
+                <field name="slide9_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide9_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide9_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide9_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
+
+                <field name="slide_10_spacer" type="spacer" label="MOD_QLBIGSLIDE_SPACER_10_LABEL" description="MOD_QLBIGSLIDE_SPACER_10_DESC" />
+                <field name="slide10_display" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_DESC" default="0" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="slide10_image" type="media" label="MOD_QLBIGSLIDE_IMAGE_LABEL" description="MOD_QLBIGSLIDE_IMAGE_DESC" directory="images" filter="\.(jpg|jpeg|png|gif|webp)$" />
+                <field name="slide10_title" type="text" label="MOD_QLBIGSLIDE_TITLE_LABEL" description="MOD_QLBIGSLIDE_TITLE_DESC" />
+                <field name="slide10_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
+                       toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
             </fieldset>
             <fieldset name="basic" addfieldprefix="Hoochicken\Module\Qlbigslide\Site\Field">
-                <field
-                        name="moduleclass_sfx"
-                        type="text"
-                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
-                />
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
             </fieldset>
         </fields>
     </config>
