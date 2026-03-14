@@ -6,7 +6,7 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Hoochicken\Module\Qlbigslide\Site\models;
+namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 
 class SlideCollection
 {

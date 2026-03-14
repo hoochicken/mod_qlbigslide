@@ -6,10 +6,12 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Hoochicken\Module\Qlbigslide\Site\models;
+namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 
 use Joomla\Registry\Registry;
 use stdClass;
+
+require_once __DIR__ . '/DisplayBasicInterface.php';
 
 /**
  * this class contains all basic functionality that a module needs

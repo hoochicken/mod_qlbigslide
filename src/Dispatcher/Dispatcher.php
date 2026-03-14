@@ -11,10 +11,10 @@ namespace Hoochicken\Module\Qlbigslide\Site\Dispatcher;
 defined('_JEXEC') or die;
 
 use Exception;
+use Hoochicken\Module\Qlbigslide\Site\Helper\DisplayCustom;
 use Hoochicken\Module\Qlbigslide\Site\Helper\QlbigslideHelper;
-use Hoochicken\Module\Qlbigslide\Site\models\DisplayCustom;
-use Hoochicken\Module\Qlbigslide\Site\models\SlideCollection;
-use Hoochicken\Module\Qlbigslide\Site\models\SlideItem;
+use Hoochicken\Module\Qlbigslide\Site\Helper\SlideCollection;
+use Hoochicken\Module\Qlbigslide\Site\Helper\SlideItem;
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 use Joomla\CMS\Helper\HelperFactoryAwareInterface;
 use Joomla\CMS\Helper\HelperFactoryAwareTrait;
@@ -31,16 +31,20 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
 
     public function dispatch()
     {
-        $this->loadLanguage();
+        try {
+            $this->loadLanguage();
 
-        $displayData = $this->getLayoutData();
-        if ($this->isProperDisplayCustom($displayData)) {
-            return;
+            $displayData = $this->getLayoutData();
+            if ($this->isProperDisplayCustom($displayData)) {
+                return;
+            }
+
+            /** @var DisplayCustom $displayData */
+            $displayData = $displayData['data'] ?? null;
+            require ModuleHelper::getLayoutPath('mod_qlbigslide', $displayData->getLayout());
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
-
-        /** @var DisplayCustom $displayData */
-        $displayData = $displayData['data'] ?? null;
-        require ModuleHelper::getLayoutPath('mod_qlbigslide', $displayData->getLayout());
     }
 
     protected function isProperDisplayCustom(array $displayData): bool
@@ -62,7 +66,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
             /** @var QlbigslideHelper $helper */
             $helper = $this->getHelperFactory()->getHelper(QlbigslideHelper::class);
 
-            $displayModel = new DisplayCustom($this->module?->parameter ?? null, $this->module);
+            $displayModel = new DisplayCustom($this->params ?? null, $this->module);
             // $displayModel->setMessage($helper->getMessage($this->params, $this->getApplication()));
 
             $displayModel->setSlides($this->getSlideCollection($this->params));

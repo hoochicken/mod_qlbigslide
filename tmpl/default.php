@@ -8,7 +8,7 @@
 
 defined('_JEXEC') or die;
 
-use Hoochicken\Module\Qlbigslide\Site\models\DisplayCustom;
+use Hoochicken\Module\Qlbigslide\Site\Helper\DisplayCustom;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;

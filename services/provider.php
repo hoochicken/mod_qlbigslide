@@ -16,11 +16,38 @@ use Joomla\DI\ServiceProviderInterface;
 
 return new class() implements ServiceProviderInterface
 {
+    const PHP_VERSION_NAMESPACE = '8.4.0';
+
     public function register(Container $container)
     {
-        require_once __DIR__ . '/../src/Dispatcher/Dispatcher.php';
+        static::requireOnceIfPhpDoesNotKnowamespaces();
+
         $container->registerServiceProvider(new ModuleDispatcherFactory('\\Hoochicken\\Module\\Qlbigslide'));
         $container->registerServiceProvider(new HelperFactory('\\Hoochicken\\Module\\Qlbigslide\\Site\\Helper'));
         $container->registerServiceProvider(new Module());
+    }
+
+    private static function requireOnceIfPhpDoesNotKnowamespaces(): void
+    {
+        if (static::checkPhpVersionKnowsNamesspaces()) {
+            return;
+        }
+
+        require_once __DIR__ . '/../src/Dispatcher/Dispatcher.php';
+        require_once __DIR__ . '/../src/Helper/DisplayBasic.php';
+        require_once __DIR__ . '/../src/Helper/DisplayBasicInterface.php';
+        require_once __DIR__ . '/../src/Helper/DisplayCustom.php';
+        require_once __DIR__ . '/../src/Helper/DisplayCustomInterface.php';
+        require_once __DIR__ . '/../src/Helper/ErrorItem.php';
+        require_once __DIR__ . '/../src/Helper/ErrorCollection.php';
+        require_once __DIR__ . '/../src/Helper/SlideItem.php';
+        require_once __DIR__ . '/../src/Helper/SlideCollection.php';
+        require_once __DIR__ . '/../src/Helper/StringHelper.php';
+    }
+
+    private static function checkPhpVersionKnowsNamesspaces(): bool
+    {
+        $phpVersion = phpversion();
+        return (version_compare($phpVersion, static::PHP_VERSION_NAMESPACE, '>='));
     }
 };

@@ -6,9 +6,7 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Hoochicken\Module\Qlbigslide\Site\models;
-
-use Hoochicken\Module\Qlbigslide\Site\Helper\StringHelper;
+namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 
 class SlideItem
 {
