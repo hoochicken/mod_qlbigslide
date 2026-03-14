@@ -17,19 +17,6 @@ class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, Displ
         parent::__construct($params, $module);
     }
 
-    /**
-     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorItem[] }
-     */
-    public function toArray(): array
-    {
-        return array_merge(
-            parent::toArray(),
-            [
-                'slides' => $this->getSlides(),
-            ]
-        );
-    }
-
     public function hasSlides(): bool
     {
         return !is_null($this->slideCollection) && !$this->slideCollection->isEmpty();
