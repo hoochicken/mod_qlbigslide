@@ -7,10 +7,7 @@ use stdClass;
 
 class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, DisplayCustomInterface
 {
-    public ?Registry $params = null;
-    public ?stdClass $module = null;
-    public ?string $message = null;
-    public ?SlideCollection $slideCollection = null;
+    private ?SlideCollection $slideCollection = null;
 
     public function __construct(Registry $params, stdClass $module)
     {

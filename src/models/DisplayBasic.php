@@ -11,11 +11,11 @@ use stdClass;
  */
 class DisplayBasic implements DisplayBasicInterface
 {
-    public ?Registry $params = null;
-    public ?stdClass $module = null;
-    public ?string $message = null;
+    private ?Registry $params = null;
+    private ?stdClass $module = null;
+    private ?string $message = null;
     /** @var ErrorCollection[] */
-    public ?ErrorCollection $errors = null;
+    private ?ErrorCollection $errors = null;
 
     public function __construct(Registry $params, stdClass $module)
     {
