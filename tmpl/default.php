@@ -42,52 +42,54 @@ if ($displayData->existsMessage()) {
 ?>
 
 <<?= $displayData->getModuleTag() ?> class="<?php echo 'mod_qlbigslide ' . $displayData->getModuleClassSuffix(); ?>">
-<?php if ($displayData->showTitle()) : ?>
-    <<?= $displayData->getHeaderTag() ?>><?php echo Text::_('MOD_QLBIGSLIDE_TITLE'); ?></<?= $displayData->getHeaderTag() ?>>
-<?php endif; ?>
-<div class="module-content">
-    <div class="slider" id="heroSlider" aria-roledescription="carousel">
-        <div class="slider__viewport">
-            <div class="slider__track">
-                <?php if ($displayData->hasSlides()): ?>
-                    <?php
-                    $slides = $displayData->getSlides()->get();
-                    $totalSlides = count($slides);
-                    $index = 1;
-                    ?>
-                    <?php foreach ($slides as $slide): ?>
-                        <?php if (!$slide->isDisplay() || !$slide->existsImage()) {
-                            continue;
-                        } ?>
-                        <section class="slide"
-                                 aria-label="<?= Text::sprintf('MOD_QLBIGSLIDE_SLIDE_ARIA_LABEL', $index, $totalSlides); ?>">
-                            <img src="<?= $slide->getImage() ?>" alt="">
-                            <div class="slide__caption">
-                                <?php if ($slide->existsTitle()) : ?><h2><?= $slide->getTitle(); ?></h2><?php endif; ?>
-                                <?php if ($slide->existsText()) : ?><?= $slide->getText(); ?><?php endif; ?>
-                            </div>
-                        </section>
-                        <?php $index++; ?>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+    <?php if ($displayData->displayTitle()) : ?>
+        <<?= $displayData->getTitleTag() ?>>
+            <?= $displayData->getTitle() ?>
+        </<?= $displayData->getTitleTag() ?>>
+    <?php endif; ?>
+    <div class="module-content">
+        <div class="slider" id="heroSlider" aria-roledescription="carousel">
+            <div class="slider__viewport">
+                <div class="slider__track">
+                    <?php if ($displayData->hasSlides()): ?>
+                        <?php
+                        $slides = $displayData->getSlides()->get();
+                        $totalSlides = count($slides);
+                        $index = 1;
+                        ?>
+                        <?php foreach ($slides as $slide): ?>
+                            <?php if (!$slide->isDisplay() || !$slide->existsImage()) {
+                                continue;
+                            } ?>
+                            <section class="slide"
+                                     aria-label="<?= Text::sprintf('MOD_QLBIGSLIDE_SLIDE_ARIA_LABEL', $index, $totalSlides); ?>">
+                                <img src="<?= $slide->getImage() ?>" alt="">
+                                <div class="slide__caption">
+                                    <?php if ($slide->existsTitle()) : ?><h2><?= $slide->getTitle(); ?></h2><?php endif; ?>
+                                    <?php if ($slide->existsText()) : ?><?= $slide->getText(); ?><?php endif; ?>
+                                </div>
+                            </section>
+                            <?php $index++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <!-- Prev / Next (can be hidden by config) -->
+            <button class="slider__btn slider__btn--prev" type="button" aria-label="Previous slide">&lt;</button>
+            <button class="slider__btn slider__btn--next" type="button" aria-label="Next slide">&gt</button>
+
+            <!-- Dots (can be hidden by config) -->
+            <div class="slider__dots" aria-label="Slide navigation"></div>
+
+            <!-- Start / Pause -->
+            <div class="slider__controls">
+                <button class="slider__controlBtn" type="button" data-action="start">Start</button>
+                <button class="slider__controlBtn" type="button" data-action="pause">Pause</button>
             </div>
         </div>
 
-        <!-- Prev / Next (can be hidden by config) -->
-        <button class="slider__btn slider__btn--prev" type="button" aria-label="Previous slide">&lt;</button>
-        <button class="slider__btn slider__btn--next" type="button" aria-label="Next slide">&gt</button>
 
-        <!-- Dots (can be hidden by config) -->
-        <div class="slider__dots" aria-label="Slide navigation"></div>
-
-        <!-- Start / Pause -->
-        <div class="slider__controls">
-            <button class="slider__controlBtn" type="button" data-action="start">Start</button>
-            <button class="slider__controlBtn" type="button" data-action="pause">Pause</button>
-        </div>
+        <?php echo $displayData->getMessage(); ?>
     </div>
-
-
-    <?php echo $displayData->getMessage(); ?>
-</div>
 </<?= $displayData->getModuleTag() ?>>

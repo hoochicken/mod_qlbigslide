@@ -44,14 +44,19 @@ class DisplayBasic implements DisplayBasicInterface
         ];
     }
 
-    public function showTitle(): bool
+    public function displayTitle(): bool
     {
-        return (bool)$this->module->showtitle ?? false;
+        return (bool)$this->module?->showtitle ?? false;
     }
 
-    public function getHeaderTag(): string
+    public function getTitle(): string
     {
-        return (bool)$this->params->get('header_tag', 'h3');
+        return (string)$this->module?->title;
+    }
+
+    public function getTitleTag(): string
+    {
+        return $this->params->get('header_tag', 'h3');
     }
 
     public function getModuleTag(): string

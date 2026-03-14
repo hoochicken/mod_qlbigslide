@@ -18,9 +18,9 @@ interface DisplayBasicInterface
      */
     public function toArray(): array;
 
-    public function showTitle(): bool;
+    public function displayTitle(): bool;
 
-    public function getHeaderTag(): string;
+    public function getTitleTag(): string;
 
     public function getModuleTag(): string;
 
