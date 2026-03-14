@@ -12,16 +12,18 @@
     <namespace path="src">Hoochicken\Module\Qlbigslide</namespace>
     <files>
         <folder module="mod_qlbigslide">services</folder>
+        <folder>language</folder>
+        <folder>media</folder>
+        <folder>services</folder>
         <folder>src</folder>
         <folder>tmpl</folder>
-        <folder>language</folder>
         <file>mod_qlbigslide.xml</file>
     </files>
-
     <media destination="mod_qlbigslide" folder="media">
         <filename>joomla.asset.json</filename>
+        <folder>css</folder>
+        <filename>css/style.css</filename>
         <folder>js</folder>
-        <!--filename>css/mod_qlbigslide.css</filename-->
         <filename>js/script.js</filename>
     </media>
     <languages>
