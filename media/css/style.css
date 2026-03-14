@@ -54,6 +54,11 @@
     backdrop-filter: blur(6px);
 }
 
+/* Caption base */
+.slide__caption > * {
+    color: #fff;
+}
+
 /* Caption alignment classes (set by JS via config) */
 .slider--box-left .slide__caption {
     left: 6%;
