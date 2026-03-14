@@ -157,7 +157,7 @@ window.SLIDER_CONFIG = {
   }
 
   // ---- Init ----
-  const root = document.getElementById("heroSlider");
+  const root = document.getElementById('heroSlider');
   if (!root) return;
 
   const external = window.SLIDER_CONFIG || {};

@@ -11,11 +11,10 @@ use stdClass;
  */
 class DisplayBasic implements DisplayBasicInterface
 {
-    private ?Registry $params = null;
-    private ?stdClass $module = null;
-    private ?string $message = null;
-    /** @var ErrorCollection[] */
-    private ?ErrorCollection $errors = null;
+    protected ?Registry $params = null;
+    protected ?stdClass $module = null;
+    protected ?string $message = null;
+    protected ?ErrorCollection $errors = null;
 
     public function __construct(Registry $params, stdClass $module)
     {
@@ -61,7 +60,7 @@ class DisplayBasic implements DisplayBasicInterface
         return htmlspecialchars($moduleClassSuffix, ENT_COMPAT, 'UTF-8');
     }
 
-    public function hasErrors(): bool
+    public function existsErrors(): bool
     {
         return !is_null($this->errors) && !$this->errors->hasErrors();
     }
@@ -84,6 +83,11 @@ class DisplayBasic implements DisplayBasicInterface
     public function setModule(?stdClass $module): void
     {
         $this->module = $module;
+    }
+
+    public function existsMessage(): bool
+    {
+        return !empty(trim(strip_tags($this->message ?? '')));
     }
 
     public function getMessage(): ?string

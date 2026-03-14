@@ -32,7 +32,7 @@ interface DisplayBasicInterface
 
     public function setMessage(?string $message): void;
 
-    public function hasErrors(): bool;
+    public function existsErrors(): bool;
 
     public function getErrors(): ?ErrorCollection;
 

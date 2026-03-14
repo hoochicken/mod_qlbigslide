@@ -7,6 +7,8 @@ use stdClass;
 
 class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, DisplayCustomInterface
 {
+    const DEFAULT_AUTOPLAY_MS = 3000;
+
     private ?SlideCollection $slideCollection = null;
 
     public function __construct(Registry $params, stdClass $module)
@@ -27,5 +29,27 @@ class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, Displ
     public function setSlides(?SlideCollection $slideCollection): void
     {
         $this->slideCollection = $slideCollection;
+    }
+
+    public function getAutoplayMs(): int
+    {
+        return (int)($this->params?->get('autoplayMs', static::DEFAULT_AUTOPLAY_MS) ?? static::DEFAULT_AUTOPLAY_MS);
+    }
+
+    public function getBoxAlign(): string
+    {
+        $align = (string)($this->params?->get('boxAlign', 'left') ?? 'left');
+
+        return $align === 'right' ? 'right' : 'left';
+    }
+
+    public function displayNavigationPrevNext(): bool
+    {
+        return (bool)($this->params?->get('displayNavigationPrevNext', 1) ?? 1);
+    }
+
+    public function displayNavigationDots(): bool
+    {
+        return (bool)($this->params?->get('displayNavigationDots', 1) ?? 1);
     }
 }

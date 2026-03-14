@@ -23,15 +23,19 @@ $wa->useScript('mod_qlbigslide.script');
 $wa->useStyle('mod_qlbigslide.style');
 
 $document->addScriptOptions('mod_qlbigslide.config', [
-    'autoplayMs' => (int)($data->getParams()?->get('autoplayMs', 3000) ?? 3000),
-    'boxAlign' => (string)($data->getParams()?->get('boxAlign', 'left') ?? 'left'),
-    'displayNavigationPrevNext' => (bool)($data->getParams()?->get('displayNavigationPrevNext', 1) ?? 1),
-    'displayNavigationDots' => (bool)($data->getParams()?->get('displayNavigationDots', 1) ?? 1),
+    'autoplayMs' => $data->getAutoplayMs(),
+    'boxAlign' => $data->getBoxAlign(),
+    'displayNavigationPrevNext' => $data->displayNavigationPrevNext(),
+    'displayNavigationDots' => $data->displayNavigationDots(),
 ]);
 
-if ($data->hasErrors()) {
-    require __DIR__ . '/error.php';
+if ($data->existsErrors()) {
+    require __DIR__ . '/errors.php';
     return;
+}
+
+if ($data->existsMessage()) {
+    require __DIR__ . '/message.php';
 }
 ?>
 
