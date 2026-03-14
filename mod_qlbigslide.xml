@@ -8,6 +8,9 @@
     <copyright>Copyright (C) 2026 Mareike Riegel. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later;</license>
     <version>1.0.0</version>
+    <updateservers>
+        <server type="extension" priority="1" name="qlbigslide - Updates">https://raw.githubusercontent.com/hoochicken/mod_qlbigslide/refs/heads/main/_jupdate/mod_qlbigslide.xml</server>
+    </updateservers>
     <description><![CDATA[MOD_QLBIGSLIDE_XML_DESCRIPTION]]></description>
     <namespace path="src">Hoochicken\Module\Qlbigslide</namespace>
     <files>
