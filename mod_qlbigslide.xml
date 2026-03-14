@@ -141,6 +141,29 @@
                 <field name="slide10_text" type="editor" label="MOD_QLBIGSLIDE_TEXT_LABEL" description="MOD_QLBIGSLIDE_TXT_DESC"
                        toolbar_location="top" toolbar_position="top" toolbar_align="left" filter="safehtml" />
             </fieldset>
+
+            <fieldset name="settings" label="MOD_QLBIGSLIDE_SETTINGS_FIELDSET_LABEL">
+                <field name="autoplayMs" type="number" label="MOD_QLBIGSLIDE_AUTOPLAYMS_LABEL" description="MOD_QLBIGSLIDE_AUTOPLAYMS_DESC"
+                       default="3000" min="0" step="100" filter="integer" />
+
+                <field name="boxAlign" type="list" label="MOD_QLBIGSLIDE_BOXALIGN_LABEL" description="MOD_QLBIGSLIDE_BOXALIGN_DESC" default="left">
+                    <option value="left">MOD_QLBIGSLIDE_BOXALIGN_LEFT</option>
+                    <option value="right">MOD_QLBIGSLIDE_BOXALIGN_RIGHT</option>
+                </field>
+
+                <field name="displayNavigationPrevNext" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_NAV_PREVNEXT_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_NAV_PREVNEXT_DESC" default="1" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="displayNavigationDots" type="radio" class="btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"
+                       label="MOD_QLBIGSLIDE_DISPLAY_NAV_DOTS_LABEL" description="MOD_QLBIGSLIDE_DISPLAY_NAV_DOTS_DESC" default="1" filter="integer">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+
             <fieldset name="basic" addfieldprefix="Hoochicken\Module\Qlbigslide\Site\Field">
                 <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
             </fieldset>

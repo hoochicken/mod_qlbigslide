@@ -35,7 +35,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
             $this->params = new Registry($data['params']);
 
             /** @var QlbigslideHelper $helper */
-            $helper = $this->getHelperFactory()->getHelper('QlbigslideHelper');
+            $helper = $this->getHelperFactory()->getHelper(QlbigslideHelper::class);
 
             $displayModel = new DisplayCustom($this->module?->parameter ?? null, $this->module);
             // $displayModel->setMessage($helper->getMessage($this->params, $this->getApplication()));
@@ -43,7 +43,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
             $displayModel->setSlides($this->getSlideCollection($this->params));
             return $displayModel->toArray();
         } catch (Exception $e) {
-            echo $e->getMessage();
+            return $e->getMessage();
         }
     }
 
