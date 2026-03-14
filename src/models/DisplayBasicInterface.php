@@ -32,9 +32,15 @@ interface DisplayBasicInterface
 
     public function setMessage(?string $message): void;
 
+    public function hasSlides(): bool;
+
+    public function getSlides(): ?SlideCollection;
+
+    public function setSlides(?SlideCollection $errors): void;
+
     public function hasErrors(): bool;
 
-    public function getErrors(): array;
+    public function getErrors(): ?ErrorCollection;
 
-    public function setErrors(array $errors): void;
+    public function setErrors(?ErrorCollection $errors): void;
 }

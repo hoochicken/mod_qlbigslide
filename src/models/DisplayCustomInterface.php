@@ -7,5 +7,9 @@ use stdClass;
 
 interface DisplayCustomInterface
 {
+    public function hasSlides(): bool;
 
+    public function getSlides(): ?SlideCollection;
+
+    public function setSlides(?SlideCollection $errors): void;
 }

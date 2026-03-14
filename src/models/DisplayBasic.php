@@ -14,8 +14,8 @@ class DisplayBasic implements DisplayBasicInterface
     public ?Registry $params = null;
     public ?stdClass $module = null;
     public ?string $message = null;
-    /** @var ErrorItem[] */
-    public array $errors = [];
+    /** @var ErrorCollection[] */
+    public ?ErrorCollection $errors = null;
 
     public function __construct(Registry $params, stdClass $module)
     {
@@ -63,7 +63,7 @@ class DisplayBasic implements DisplayBasicInterface
 
     public function hasErrors(): bool
     {
-        return count($this->errors) > 0;
+        return !$this->errors->isEmpty();
     }
 
     public function getParams(): ?Registry
@@ -96,12 +96,12 @@ class DisplayBasic implements DisplayBasicInterface
         $this->message = $message;
     }
 
-    public function getErrors(): array
+    public function getErrors(): ?ErrorCollection
     {
         return $this->errors;
     }
 
-    public function setErrors(array $errors): void
+    public function setErrors(?ErrorCollection $errors): void
     {
         $this->errors = $errors;
     }
