@@ -1,3 +1,10 @@
+/**
+ * mod_qlbigslide
+ *
+ * @copyright  Copyright (C) 2026. All rights reserved.
+ * @license    GNU General Public License version 2 or later;
+ */
+
 if (!window.Joomla) {
   throw new Error('Joomla API was not properly initialised');
 }
