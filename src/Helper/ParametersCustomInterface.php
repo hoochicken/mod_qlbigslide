@@ -11,7 +11,7 @@ namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 use Joomla\Registry\Registry;
 use stdClass;
 
-interface DisplayCustomInterface
+interface ParametersCustomInterface
 {
     public function hasSlides(): bool;
 

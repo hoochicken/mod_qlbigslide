@@ -8,12 +8,12 @@
 
 defined('_JEXEC') or die;
 
-use Hoochicken\Module\Qlbigslide\Site\Helper\DisplayCustom;
+use Hoochicken\Module\Qlbigslide\Site\Helper\ParametersCustom;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 
-/** @var ?DisplayCustom $displayData */
+/** @var ?ParametersCustom $displayData */
 
 // Get the WebAsset Manager
 $document = Factory::getApplication()->getDocument();

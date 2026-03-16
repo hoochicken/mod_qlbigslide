@@ -11,10 +11,10 @@ namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 use Joomla\Registry\Registry;
 use stdClass;
 
-require_once __DIR__ . '/DisplayBasicInterface.php';
-require_once __DIR__ . '/DisplayCustomInterface.php';
+require_once __DIR__ . '/ParametersBasicInterface.php';
+require_once __DIR__ . '/ParametersCustomInterface.php';
 
-class DisplayCustom extends DisplayBasic implements DisplayBasicInterface, DisplayCustomInterface
+class ParametersCustom extends ParametersBasic implements ParametersBasicInterface, ParametersCustomInterface
 {
     const DEFAULT_AUTOPLAY_MS = 3000;
 

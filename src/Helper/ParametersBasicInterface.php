@@ -11,7 +11,7 @@ namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 use Joomla\Registry\Registry;
 use stdClass;
 
-interface DisplayBasicInterface
+interface ParametersBasicInterface
 {
     /**
      * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorItem[] }

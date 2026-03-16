@@ -19,7 +19,7 @@ Qlbigslide is a Joomla 5/6 site module that displays a configurable hero slider 
 ### How it works (architecture)
 
 - **Models**
-  - `DisplayBasic` / `DisplayBasicInterface`: base data for the module (params, module, message, errors).
+  - `ParametersBasic` / `ParametersBasicInterface`: base data for the module (params, module, message, errors).
   - `DisplayCustom` / `DisplayCustomInterface`: extends the basic display with slide-related data and slider settings.
   - `SlideItem`: represents a single slide (display flag, image, title, text, helper methods like `existsImage()`, `existsTitle()`, `existsText()`).
   - `SlideCollection`: collection of `SlideItem` objects with `add()`, `set()`, `get()`, `isEmpty()`.

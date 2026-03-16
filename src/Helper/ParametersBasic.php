@@ -11,13 +11,13 @@ namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 use Joomla\Registry\Registry;
 use stdClass;
 
-require_once __DIR__ . '/DisplayBasicInterface.php';
+require_once __DIR__ . '/ParametersBasicInterface.php';
 
 /**
  * this class contains all basic functionality that a module needs
- * specifications for the custom module will be put into DisplayCustom
+ * specifications for the custom module will be put into ParametersCustom
  */
-class DisplayBasic implements DisplayBasicInterface
+class ParametersBasic implements ParametersBasicInterface
 {
     protected ?Registry $params = null;
     protected ?stdClass $module = null;

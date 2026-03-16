@@ -11,7 +11,7 @@ namespace Hoochicken\Module\Qlbigslide\Site\Dispatcher;
 defined('_JEXEC') or die;
 
 use Exception;
-use Hoochicken\Module\Qlbigslide\Site\Helper\DisplayCustom;
+use Hoochicken\Module\Qlbigslide\Site\Helper\ParametersCustom;
 use Hoochicken\Module\Qlbigslide\Site\Helper\QlbigslideHelper;
 use Hoochicken\Module\Qlbigslide\Site\Helper\SlideCollection;
 use Hoochicken\Module\Qlbigslide\Site\Helper\SlideItem;
@@ -39,7 +39,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
                 return;
             }
 
-            /** @var DisplayCustom $displayData */
+            /** @var ParametersCustom $displayData */
             $displayData = $displayData['data'] ?? null;
             require ModuleHelper::getLayoutPath('mod_qlbigslide', $displayData->getLayout());
         } catch (Exception $e) {
@@ -49,7 +49,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
 
     protected function isProperDisplayCustom(array $displayData): bool
     {
-        return empty($displayData) || !isset($displayData['data']) || DisplayCustom::class !== get_class($displayData['data']);
+        return empty($displayData) || !isset($displayData['data']) || ParametersCustom::class !== get_class($displayData['data']);
     }
 
     /**
@@ -66,7 +66,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
             /** @var QlbigslideHelper $helper */
             $helper = $this->getHelperFactory()->getHelper(QlbigslideHelper::class);
 
-            $displayModel = new DisplayCustom($this->params ?? null, $this->module);
+            $displayModel = new ParametersCustom($this->params ?? null, $this->module);
             // $displayModel->setMessage($helper->getMessage($this->params, $this->getApplication()));
 
             $displayModel->setSlides($this->getSlideCollection($this->params));

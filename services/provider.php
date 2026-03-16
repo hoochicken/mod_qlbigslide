@@ -34,10 +34,10 @@ return new class() implements ServiceProviderInterface
         }
 
         require_once __DIR__ . '/../src/Dispatcher/Dispatcher.php';
-        require_once __DIR__ . '/../src/Helper/DisplayBasic.php';
-        require_once __DIR__ . '/../src/Helper/DisplayBasicInterface.php';
-        require_once __DIR__ . '/../src/Helper/DisplayCustom.php';
-        require_once __DIR__ . '/../src/Helper/DisplayCustomInterface.php';
+        require_once __DIR__ . '/../src/Helper/ParametersBasic.php';
+        require_once __DIR__ . '/../src/Helper/ParametersBasicInterface.php';
+        require_once __DIR__ . '/../src/Helper/ParametersCustom.php';
+        require_once __DIR__ . '/../src/Helper/ParametersCustomInterface.php';
         require_once __DIR__ . '/../src/Helper/ErrorItem.php';
         require_once __DIR__ . '/../src/Helper/ErrorCollection.php';
         require_once __DIR__ . '/../src/Helper/SlideItem.php';
