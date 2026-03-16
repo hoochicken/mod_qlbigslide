@@ -38,8 +38,8 @@ return new class() implements ServiceProviderInterface
         require_once __DIR__ . '/../src/Helper/ParametersBasicInterface.php';
         require_once __DIR__ . '/../src/Helper/ParametersCustom.php';
         require_once __DIR__ . '/../src/Helper/ParametersCustomInterface.php';
-        require_once __DIR__ . '/../src/Helper/ErrorItem.php';
-        require_once __DIR__ . '/../src/Helper/ErrorCollection.php';
+        require_once __DIR__ . '/../src/Helper/MessageItem.php';
+        require_once __DIR__ . '/../src/Helper/MessageCollection.php';
         require_once __DIR__ . '/../src/Helper/SlideItem.php';
         require_once __DIR__ . '/../src/Helper/SlideCollection.php';
         require_once __DIR__ . '/../src/Helper/StringHelper.php';

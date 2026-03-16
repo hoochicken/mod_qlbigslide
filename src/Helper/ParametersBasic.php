@@ -22,7 +22,7 @@ class ParametersBasic implements ParametersBasicInterface
     protected ?Registry $params = null;
     protected ?stdClass $module = null;
     protected ?string $message = null;
-    protected ?ErrorCollection $errors = null;
+    protected ?MessageCollection $errors = null;
 
     public function __construct(Registry $params, stdClass $module)
     {
@@ -31,7 +31,7 @@ class ParametersBasic implements ParametersBasicInterface
     }
 
     /**
-     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorItem[] }
+     * @return array{ message: string, params: Registry, module: stdClass, errors: MessageItem[] }
      */
     public function toArray(): array
     {
@@ -118,12 +118,12 @@ class ParametersBasic implements ParametersBasicInterface
         $this->message = $message;
     }
 
-    public function getErrors(): ?ErrorCollection
+    public function getErrors(): ?MessageCollection
     {
         return $this->errors;
     }
 
-    public function setErrors(?ErrorCollection $errors): void
+    public function setErrors(?MessageCollection $errors): void
     {
         $this->errors = $errors;
     }

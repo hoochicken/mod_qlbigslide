@@ -8,26 +8,26 @@
 
 namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 
-class ErrorCollection
+class MessageCollection
 {
-    /** @var ErrorItem[] */
+    /** @var MessageItem[] */
     private array $items = [];
 
-    public function add(ErrorItem $error): void
+    public function add(MessageItem $message): void
     {
-        $this->items[] = $error;
+        $this->items[] = $message;
     }
 
     /**
-     * @param ErrorItem[] $errors
+     * @param MessageItem[] $messages
      */
-    public function set(array $errors): void
+    public function set(array $messages): void
     {
-        $this->items = $errors;
+        $this->items = $messages;
     }
 
     /**
-     * @return ErrorItem[]
+     * @return MessageItem[]
      */
     public function get(): array
     {

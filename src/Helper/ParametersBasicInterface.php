@@ -14,7 +14,7 @@ use stdClass;
 interface ParametersBasicInterface
 {
     /**
-     * @return array{ message: string, params: Registry, module: stdClass, errors: ErrorItem[] }
+     * @return array{ message: string, params: Registry, module: stdClass, errors: MessageItem[] }
      */
     public function toArray(): array;
 
@@ -42,7 +42,7 @@ interface ParametersBasicInterface
 
     public function existsErrors(): bool;
 
-    public function getErrors(): ?ErrorCollection;
+    public function getErrors(): ?MessageCollection;
 
-    public function setErrors(?ErrorCollection $errors): void;
+    public function setErrors(?MessageCollection $errors): void;
 }

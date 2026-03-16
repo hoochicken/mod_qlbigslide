@@ -8,7 +8,7 @@
 
 namespace Hoochicken\Module\Qlbigslide\Site\Helper;
 
-class ErrorItem
+class MessageItem
 {
     private string $type;
     private string $message;
